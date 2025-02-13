@@ -12,6 +12,27 @@ Here are some screenshots of the application in action:
 ![App Screen 2](app_screen2.png)
 *Figure 2: User receiving a chart based on their query.*
 
+## Database Schema
+
+The Text2SQL Chatbot uses the Chinook database, which is a sample database representing a digital media store. Below is the schema of the Chinook database:
+
+![Chinook Database Schema](chinook_database.png)
+*Figure 3: Chinook Database Schema.*
+
+The Chinook database includes tables such as:
+
+- **Albums**: Stores information about music albums.
+- **Artists**: Stores information about music artists.
+- **Customers**: Stores information about customers.
+- **Employees**: Stores information about employees.
+- **Genres**: Stores information about music genres.
+- **Invoices**: Stores information about invoices.
+- **InvoiceLines**: Stores information about individual invoice items.
+- **MediaTypes**: Stores information about media types.
+- **Playlists**: Stores information about playlists.
+- **PlaylistTrack**: Stores information about the tracks in playlists.
+- **Tracks**: Stores information about music tracks.
+
 ## Installation Steps
 
 Follow these steps to set up the environment, install the required dependencies, and run the application.
