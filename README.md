@@ -7,17 +7,17 @@ The Text2SQL Chatbot is an advanced tool that allows users to interact with a SQ
 Here are some screenshots of the application in action:
 
 ![App Screen 1](app_screen.png)
-*Figure 1: User interacting with the chatbot and receiving a tabular response.*
+_Figure 1: User interacting with the chatbot and receiving a tabular response._
 
 ![App Screen 2](app_screen2.png)
-*Figure 2: User receiving a chart based on their query.*
+_Figure 2: User receiving a chart based on their query._
 
 ## Database Schema
 
 The Text2SQL Chatbot uses the Chinook database, which is a sample database representing a digital media store. Below is the schema of the Chinook database:
 
 ![Chinook Database Schema](chinook_database.png)
-*Figure 3: Chinook Database Schema.*
+_Figure 3: Chinook Database Schema._
 
 The Chinook database includes tables such as:
 

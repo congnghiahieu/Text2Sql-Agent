@@ -1,8 +1,9 @@
-
-from langchain_core.output_parsers import JsonOutputParser, StrOutputParser
-from prompts.summary_generation_prompt import summary_generation_prompt_template
 from langchain.prompts import PromptTemplate
+from langchain_core.output_parsers import JsonOutputParser, StrOutputParser
+
+from prompts.summary_generation_prompt import summary_generation_prompt_template
 from src.utils import llm
+
 
 def generate_summary(query_result, user_question: str) -> str:
     # Initialize the StrOutput parser
@@ -11,7 +12,7 @@ def generate_summary(query_result, user_question: str) -> str:
     # Create the prompt template
     prompt_template = PromptTemplate(
         input_variables=["query_result", "user_question"],
-        template=summary_generation_prompt_template()
+        template=summary_generation_prompt_template(),
     )
 
     # Initialize The Chain
@@ -22,5 +23,5 @@ def generate_summary(query_result, user_question: str) -> str:
             "user_question": user_question,
         }
     )
-    
+
     return response

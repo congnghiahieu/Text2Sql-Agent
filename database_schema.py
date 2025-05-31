@@ -1,10 +1,10 @@
 def load_schema_details():
     table_info = """
         CREATE TABLE "Album" (
-	"AlbumId" INTEGER NOT NULL, 
-	"Title" NVARCHAR(160) NOT NULL, 
-	"ArtistId" INTEGER NOT NULL, 
-	PRIMARY KEY ("AlbumId"), 
+	"AlbumId" INTEGER NOT NULL,
+	"Title" NVARCHAR(160) NOT NULL,
+	"ArtistId" INTEGER NOT NULL,
+	PRIMARY KEY ("AlbumId"),
 	FOREIGN KEY("ArtistId") REFERENCES "Artist" ("ArtistId")
     )
 
@@ -18,8 +18,8 @@ def load_schema_details():
 
 
     CREATE TABLE "Artist" (
-        "ArtistId" INTEGER NOT NULL, 
-        "Name" NVARCHAR(120), 
+        "ArtistId" INTEGER NOT NULL,
+        "Name" NVARCHAR(120),
         PRIMARY KEY ("ArtistId")
     )
 
@@ -33,20 +33,20 @@ def load_schema_details():
 
 
     CREATE TABLE "Customer" (
-        "CustomerId" INTEGER NOT NULL, 
-        "FirstName" NVARCHAR(40) NOT NULL, 
-        "LastName" NVARCHAR(20) NOT NULL, 
-        "Company" NVARCHAR(80), 
-        "Address" NVARCHAR(70), 
-        "City" NVARCHAR(40), 
-        "State" NVARCHAR(40), 
-        "Country" NVARCHAR(40), 
-        "PostalCode" NVARCHAR(10), 
-        "Phone" NVARCHAR(24), 
-        "Fax" NVARCHAR(24), 
-        "Email" NVARCHAR(60) NOT NULL, 
-        "SupportRepId" INTEGER, 
-        PRIMARY KEY ("CustomerId"), 
+        "CustomerId" INTEGER NOT NULL,
+        "FirstName" NVARCHAR(40) NOT NULL,
+        "LastName" NVARCHAR(20) NOT NULL,
+        "Company" NVARCHAR(80),
+        "Address" NVARCHAR(70),
+        "City" NVARCHAR(40),
+        "State" NVARCHAR(40),
+        "Country" NVARCHAR(40),
+        "PostalCode" NVARCHAR(10),
+        "Phone" NVARCHAR(24),
+        "Fax" NVARCHAR(24),
+        "Email" NVARCHAR(60) NOT NULL,
+        "SupportRepId" INTEGER,
+        PRIMARY KEY ("CustomerId"),
         FOREIGN KEY("SupportRepId") REFERENCES "Employee" ("EmployeeId")
     )
 
@@ -60,22 +60,22 @@ def load_schema_details():
 
 
     CREATE TABLE "Employee" (
-        "EmployeeId" INTEGER NOT NULL, 
-        "LastName" NVARCHAR(20) NOT NULL, 
-        "FirstName" NVARCHAR(20) NOT NULL, 
-        "Title" NVARCHAR(30), 
-        "ReportsTo" INTEGER, 
-        "BirthDate" DATETIME, 
-        "HireDate" DATETIME, 
-        "Address" NVARCHAR(70), 
-        "City" NVARCHAR(40), 
-        "State" NVARCHAR(40), 
-        "Country" NVARCHAR(40), 
-        "PostalCode" NVARCHAR(10), 
-        "Phone" NVARCHAR(24), 
-        "Fax" NVARCHAR(24), 
-        "Email" NVARCHAR(60), 
-        PRIMARY KEY ("EmployeeId"), 
+        "EmployeeId" INTEGER NOT NULL,
+        "LastName" NVARCHAR(20) NOT NULL,
+        "FirstName" NVARCHAR(20) NOT NULL,
+        "Title" NVARCHAR(30),
+        "ReportsTo" INTEGER,
+        "BirthDate" DATETIME,
+        "HireDate" DATETIME,
+        "Address" NVARCHAR(70),
+        "City" NVARCHAR(40),
+        "State" NVARCHAR(40),
+        "Country" NVARCHAR(40),
+        "PostalCode" NVARCHAR(10),
+        "Phone" NVARCHAR(24),
+        "Fax" NVARCHAR(24),
+        "Email" NVARCHAR(60),
+        PRIMARY KEY ("EmployeeId"),
         FOREIGN KEY("ReportsTo") REFERENCES "Employee" ("EmployeeId")
     )
 
@@ -89,8 +89,8 @@ def load_schema_details():
 
 
     CREATE TABLE "Genre" (
-        "GenreId" INTEGER NOT NULL, 
-        "Name" NVARCHAR(120), 
+        "GenreId" INTEGER NOT NULL,
+        "Name" NVARCHAR(120),
         PRIMARY KEY ("GenreId")
     )
 
@@ -104,16 +104,16 @@ def load_schema_details():
 
 
     CREATE TABLE "Invoice" (
-        "InvoiceId" INTEGER NOT NULL, 
-        "CustomerId" INTEGER NOT NULL, 
-        "InvoiceDate" DATETIME NOT NULL, 
-        "BillingAddress" NVARCHAR(70), 
-        "BillingCity" NVARCHAR(40), 
-        "BillingState" NVARCHAR(40), 
-        "BillingCountry" NVARCHAR(40), 
-        "BillingPostalCode" NVARCHAR(10), 
-        "Total" NUMERIC(10, 2) NOT NULL, 
-        PRIMARY KEY ("InvoiceId"), 
+        "InvoiceId" INTEGER NOT NULL,
+        "CustomerId" INTEGER NOT NULL,
+        "InvoiceDate" DATETIME NOT NULL,
+        "BillingAddress" NVARCHAR(70),
+        "BillingCity" NVARCHAR(40),
+        "BillingState" NVARCHAR(40),
+        "BillingCountry" NVARCHAR(40),
+        "BillingPostalCode" NVARCHAR(10),
+        "Total" NUMERIC(10, 2) NOT NULL,
+        PRIMARY KEY ("InvoiceId"),
         FOREIGN KEY("CustomerId") REFERENCES "Customer" ("CustomerId")
     )
 
@@ -127,13 +127,13 @@ def load_schema_details():
 
 
     CREATE TABLE "InvoiceLine" (
-        "InvoiceLineId" INTEGER NOT NULL, 
-        "InvoiceId" INTEGER NOT NULL, 
-        "TrackId" INTEGER NOT NULL, 
-        "UnitPrice" NUMERIC(10, 2) NOT NULL, 
-        "Quantity" INTEGER NOT NULL, 
-        PRIMARY KEY ("InvoiceLineId"), 
-        FOREIGN KEY("TrackId") REFERENCES "Track" ("TrackId"), 
+        "InvoiceLineId" INTEGER NOT NULL,
+        "InvoiceId" INTEGER NOT NULL,
+        "TrackId" INTEGER NOT NULL,
+        "UnitPrice" NUMERIC(10, 2) NOT NULL,
+        "Quantity" INTEGER NOT NULL,
+        PRIMARY KEY ("InvoiceLineId"),
+        FOREIGN KEY("TrackId") REFERENCES "Track" ("TrackId"),
         FOREIGN KEY("InvoiceId") REFERENCES "Invoice" ("InvoiceId")
     )
 
@@ -147,8 +147,8 @@ def load_schema_details():
 
 
     CREATE TABLE "MediaType" (
-        "MediaTypeId" INTEGER NOT NULL, 
-        "Name" NVARCHAR(120), 
+        "MediaTypeId" INTEGER NOT NULL,
+        "Name" NVARCHAR(120),
         PRIMARY KEY ("MediaTypeId")
     )
 
@@ -162,8 +162,8 @@ def load_schema_details():
 
 
     CREATE TABLE "Playlist" (
-        "PlaylistId" INTEGER NOT NULL, 
-        "Name" NVARCHAR(120), 
+        "PlaylistId" INTEGER NOT NULL,
+        "Name" NVARCHAR(120),
         PRIMARY KEY ("PlaylistId")
     )
 
@@ -177,10 +177,10 @@ def load_schema_details():
 
 
     CREATE TABLE "PlaylistTrack" (
-        "PlaylistId" INTEGER NOT NULL, 
-        "TrackId" INTEGER NOT NULL, 
-        PRIMARY KEY ("PlaylistId", "TrackId"), 
-        FOREIGN KEY("TrackId") REFERENCES "Track" ("TrackId"), 
+        "PlaylistId" INTEGER NOT NULL,
+        "TrackId" INTEGER NOT NULL,
+        PRIMARY KEY ("PlaylistId", "TrackId"),
+        FOREIGN KEY("TrackId") REFERENCES "Track" ("TrackId"),
         FOREIGN KEY("PlaylistId") REFERENCES "Playlist" ("PlaylistId")
     )
 
@@ -194,18 +194,18 @@ def load_schema_details():
 
 
     CREATE TABLE "Track" (
-        "TrackId" INTEGER NOT NULL, 
-        "Name" NVARCHAR(200) NOT NULL, 
-        "AlbumId" INTEGER, 
-        "MediaTypeId" INTEGER NOT NULL, 
-        "GenreId" INTEGER, 
-        "Composer" NVARCHAR(220), 
-        "Milliseconds" INTEGER NOT NULL, 
-        "Bytes" INTEGER, 
-        "UnitPrice" NUMERIC(10, 2) NOT NULL, 
-        PRIMARY KEY ("TrackId"), 
-        FOREIGN KEY("MediaTypeId") REFERENCES "MediaType" ("MediaTypeId"), 
-        FOREIGN KEY("GenreId") REFERENCES "Genre" ("GenreId"), 
+        "TrackId" INTEGER NOT NULL,
+        "Name" NVARCHAR(200) NOT NULL,
+        "AlbumId" INTEGER,
+        "MediaTypeId" INTEGER NOT NULL,
+        "GenreId" INTEGER,
+        "Composer" NVARCHAR(220),
+        "Milliseconds" INTEGER NOT NULL,
+        "Bytes" INTEGER,
+        "UnitPrice" NUMERIC(10, 2) NOT NULL,
+        PRIMARY KEY ("TrackId"),
+        FOREIGN KEY("MediaTypeId") REFERENCES "MediaType" ("MediaTypeId"),
+        FOREIGN KEY("GenreId") REFERENCES "Genre" ("GenreId"),
         FOREIGN KEY("AlbumId") REFERENCES "Album" ("AlbumId")
     )
 
