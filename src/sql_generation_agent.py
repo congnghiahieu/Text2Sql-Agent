@@ -17,15 +17,12 @@ class SQLQueryGenerator(BaseModel):
 
 # SQL generation function with enhanced prompt template for SQLite
 def generate_sql_query(
-	user_question: str, table_info: str, chat_history: list, dialect: str = "sqlite"
+	user_question: str, table_info: str, chat_messages: list, dialect: str = "sqlite"
 ) -> str:
-	"""Generate SQL query from user question for SQLite, considering conversation history."""
-
-	# Include the conversation history as context in the prompt
 	conversation_context = "\n".join(
 		[
 			f"User: {msg['content']}" if msg["role"] == "user" else f"Assistant: {msg['content']}"
-			for msg in chat_history
+			for msg in chat_messages
 		]
 	)
 

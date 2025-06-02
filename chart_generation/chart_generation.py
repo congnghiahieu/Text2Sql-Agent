@@ -12,7 +12,7 @@ class ChartGenerationFormat(BaseModel):
 	chart_code: str = Field(..., description="Syntactically correct python chart code.")
 
 
-def generate_chart(result_str, user_question, plot_flag):
+def generate_chart(result_str: str, user_question: str):
 	chart_generation_prompt_template = """
     You are an advanced Chart Code creator. You will provided a comma separated data, and also the user question. Based on teh question,
     you will intelligently give a ALWAYS CORRECT python code using plotly to generate a chart code, which I will execute to get the plot object
