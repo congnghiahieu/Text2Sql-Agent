@@ -2,7 +2,6 @@ from langchain_openai import ChatOpenAI
 
 from src.settings import SETTINGS
 
-############OpenAI Chat Instance #######################
 llm = ChatOpenAI(
 	api_key=SETTINGS.LLM_API_KEY,
 	base_url=SETTINGS.LLM_BASE_URL,
