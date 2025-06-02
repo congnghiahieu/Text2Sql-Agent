@@ -1,5 +1,5 @@
 def load_schema_details():
-    table_info = """
+	table_info = """
         CREATE TABLE "Album" (
 	"AlbumId" INTEGER NOT NULL,
 	"Title" NVARCHAR(160) NOT NULL,
@@ -217,4 +217,4 @@ def load_schema_details():
     3	Fast As a Shark	3	2	1	F. Baltes, S. Kaufman, U. Dirkscneider & W. Hoffman	230619	3990994	0.99
             """
 
-    return table_info
+	return table_info

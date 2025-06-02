@@ -1,5 +1,5 @@
 def sql_generation_prompt_template():
-    sql_generation_prompt = """
+	sql_generation_prompt = """
         Given the conversation context, create a syntactically correct {dialect} query to help find the answer to the user's question.
         If the user specifies a number of results, adjust the query accordingly.
         Limit the results to a maximum of 5 if not specified.
@@ -31,4 +31,4 @@ def sql_generation_prompt_template():
 
         {format_instructions}
         """
-    return sql_generation_prompt
+	return sql_generation_prompt

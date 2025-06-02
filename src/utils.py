@@ -1,12 +1,11 @@
-import sqlite3
-
-import openai
-from langchain_community.utilities import SQLDatabase
 from langchain_openai import ChatOpenAI
 
-openai.organization = "<masked>"
-openai.api_key = "<masked>"
+from src.settings import SETTINGS
+
 ############OpenAI Chat Instance #######################
 llm = ChatOpenAI(
-    model_name="gpt-3.5-turbo", temperature=0, openai_api_key=openai.api_key
+	api_key=SETTINGS.LLM_API_KEY,
+	base_url=SETTINGS.LLM_BASE_URL,
+	model=SETTINGS.LLM_MODEL_NAME,
+	temperature=0,
 )

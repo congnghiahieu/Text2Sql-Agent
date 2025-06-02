@@ -1,5 +1,5 @@
 def few_shot_examples():
-    example_scenarios = """
+	example_scenarios = """
             Example Scenarios:
 
             1. Find the total number of albums by each artist.
@@ -116,4 +116,4 @@ def few_shot_examples():
             HAVING SUM(i.Total) > 50
             LIMIT 10;
         """
-    return example_scenarios
+	return example_scenarios
